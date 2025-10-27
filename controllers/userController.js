@@ -1,14 +1,16 @@
+import * as userService from "../services/userService.js";
+
 const getAllUsers = (req, res) => {
-  res.send("Fetching all users");
+  res.send(userService.getAllUsers());
 };
 
 const addUser = (req, res) => {
-  res.send("Adding a new user");
+  res.send(userService.addUser());
 };
 
 const getUserById = (req, res) => {
   const userId = req.params.id;
-  res.send(`Fetching user with ID: ${userId}`);
+  res.send(userService.getUserById(userId));
 };
 
 export { getAllUsers, addUser, getUserById };
