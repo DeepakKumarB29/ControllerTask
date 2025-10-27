@@ -1,5 +1,6 @@
+import path from "path";
 const getAllProducts = () => {
-  return "Fetching all products";
+  return path.join(import.meta.dirname, "..", "views", "product.html");
 };
 
 const addProduct = () => {

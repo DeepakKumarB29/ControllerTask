@@ -1,7 +1,7 @@
 import * as productService from "../services/productService.js";
 
 const getAllProducts = (req, res) => {
-  res.send(productService.getAllProducts());
+  res.sendFile(productService.getAllProducts());
 };
 
 const addProduct = (req, res) => {
