@@ -3,8 +3,9 @@ const getAllProducts = () => {
   return path.join(import.meta.dirname, "..", "views", "product.html");
 };
 
-const addProduct = () => {
-  return "Adding a new product";
+const addProduct = (productData) => {
+  console.log("New product received:", productData);
+  return { message: "Product added successfully", product: productData };
 };
 
 const getProductById = (productId) => {

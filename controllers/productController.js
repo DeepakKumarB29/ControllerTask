@@ -5,7 +5,9 @@ const getAllProducts = (req, res) => {
 };
 
 const addProduct = (req, res) => {
-  res.send(productService.addProduct());
+  const productData = req.body;
+  const result = productService.addProduct(productData);
+  res.send(result);
 };
 
 const getProductById = (req, res) => {
