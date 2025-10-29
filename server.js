@@ -2,6 +2,7 @@ import express from "express";
 import productRoutes from "./routes/productRoutes.js";
 import userRoutes from "./routes/userRoutes.js";
 import cartRoutes from "./routes/cartRoutes.js";
+import { errorHandler } from "./middleware/errorHandler.js";
 
 const app = express();
 const PORT = 3000;
@@ -17,10 +18,11 @@ app.use("/users", userRoutes);
 app.use("/products", productRoutes);
 app.use("/cart", cartRoutes);
 
-// 404 Handler
 app.use((req, res) => {
   res.status(404).send("Page not found");
 });
+
+app.use(errorHandler);
 
 app.listen(PORT, () => {
   console.log(`Server running on http://localhost:${PORT}`);

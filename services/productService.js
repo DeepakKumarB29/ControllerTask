@@ -1,6 +1,6 @@
 import path from "path";
 const getAllProducts = () => {
-  return path.join(import.meta.dirname, "..", "views", "product.html");
+  return path.join(process.cwd(), "views", "product.html");
 };
 
 const addProduct = (productData) => {
